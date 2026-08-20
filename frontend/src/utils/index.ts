@@ -466,6 +466,9 @@ const _EJS_CORES_MAP: Record<string, string[]> = {
     "fbalpha2012_cps1",
     "fbalpha2012_cps2",
   ],
+  cps1: ["fbneo", "fbalpha2012_cps1"],
+  cps2: ["fbneo", "fbalpha2012_cps2"],
+  cps3: ["fbneo"],
   neogeoaes: ["fbneo"],
   neogeomvs: ["fbneo"],
   atari2600: ["stella2014"],
@@ -883,7 +886,14 @@ export function isCDBasedSystem(platformSlug: string): boolean {
   return CD_BASED_SYSTEMS.has(platformSlug.toLowerCase());
 }
 
-export const ARCADE_SYSTEMS = new Set(["arcade", "neogeoaes", "neogeomvs"]);
+export const ARCADE_SYSTEMS = new Set([
+  "arcade",
+  "cps1",
+  "cps2",
+  "cps3",
+  "neogeoaes",
+  "neogeomvs",
+]);
 
 export function isArcadeSystem(platformSlug: string): boolean {
   return ARCADE_SYSTEMS.has(platformSlug.toLowerCase());
